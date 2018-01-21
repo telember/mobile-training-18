@@ -1,0 +1,13 @@
+page-post {
+  .post{
+    textarea::placeholder {
+      color:gray;
+      font-style: italic;
+    }
+
+  }
+  .btn-post{
+    font-weight: bold;
+  }
+
+}
