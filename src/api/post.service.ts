@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { APP_CONFIG } from "../config/app.config";
 
 /*
   Generated class for the NotiApiProvider provider.
@@ -9,10 +10,10 @@ import { Injectable } from "@angular/core";
 */
 @Injectable()
 export class PostApiProvider {
-  host = "http://27.254.63.20:8200";
+  host = APP_CONFIG.HOST;
 
   constructor(public http: HttpClient) {
-    console.log("Hello NotiApiProvider Provider");
+
   }
 
   getPosts() {
@@ -23,7 +24,7 @@ export class PostApiProvider {
     return this.http.get(`${this.host}/posts/${id}`);
   }
 
-  createPost( data) {
+  createPost(data) {
     return this.http.post(`${this.host}/posts`, data);
   }
 

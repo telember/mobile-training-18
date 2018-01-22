@@ -14,21 +14,16 @@
 
 
 <ion-content>
-  <ion-list no-lines>
-    <ion-item>
-      <ion-textarea class="post" placeholder="what’s happening...." [(ngModel)]="dataPost.detail" ></ion-textarea>
-    </ion-item>
-  </ion-list>
-
+  <ion-textarea class="post" placeholder="what’s happening...." [(ngModel)]="dataPost.detail"></ion-textarea>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-      <ion-item no-lines>
-        <ion-input placeholder="name" [(ngModel)]="dataPost.name"></ion-input>
-      </ion-item>
+    <ion-item no-lines>
+      <ion-input placeholder="name" [(ngModel)]="dataPost.name"></ion-input>
+    </ion-item>
 
-    <ion-buttons end  (click)="actionPost()">
+    <ion-buttons end (click)="actionPost()">
       <button ion-button icon-right color="royal" class="btn-post">
         POST
       </button>

@@ -1,13 +1,16 @@
 page-post {
-  .post{
+  .post {
+    margin-top: 10%;
+    height: 60%;
+    textarea {
+      height: 100%;
+    }
     textarea::placeholder {
-      color:gray;
+      color: gray;
       font-style: italic;
     }
-
   }
-  .btn-post{
+  .btn-post {
     font-weight: bold;
   }
-
 }

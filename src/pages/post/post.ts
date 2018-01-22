@@ -5,7 +5,7 @@ import {
   LoadingController,
   ToastController
 } from "ionic-angular";
-import { PostApiProvider } from "../../api/post.api";
+import { PostApiProvider } from "../../api/post.service";
 
 
 /**
@@ -29,8 +29,7 @@ export class PostPage {
     private api: PostApiProvider,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
-    private navCtrl: NavController,
-    private navParams: NavParams
+    private navCtrl: NavController
   ) {}
 
   ionViewDidLoad() {}
