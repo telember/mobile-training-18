@@ -8,7 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PostPage } from '../pages/post/post';
-import { PostApiProvider } from '../api/post.service';
+import { PostApiProvider } from '../api/post.api';
 
 @NgModule({
   declarations: [MyApp, HomePage, PostPage],

@@ -5,7 +5,7 @@ import {
   LoadingController,
   ToastController
 } from "ionic-angular";
-import { PostApiProvider } from "../../api/post.service";
+import { PostApiProvider } from "../../api/post.api";
 
 
 /**
