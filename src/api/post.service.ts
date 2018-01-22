@@ -8,7 +8,7 @@ import { Injectable } from "@angular/core";
   and Angular DI.
 */
 @Injectable()
-export class NotiApiProvider {
+export class PostApiProvider {
   host = "http://27.254.63.20:8200";
 
   constructor(public http: HttpClient) {

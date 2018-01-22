@@ -6,32 +6,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { NotiApiProvider } from '../providers/noti-api/noti-api';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PostPage } from '../pages/post/post';
+import { PostApiProvider } from '../api/post.service';
 
 @NgModule({
-  declarations: [
-    MyApp,
-    HomePage,
-    PostPage
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    IonicModule.forRoot(MyApp)
-  ],
+  declarations: [MyApp, HomePage, PostPage],
+  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    PostPage
-  ],
+  entryComponents: [MyApp, HomePage, PostPage],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    NotiApiProvider
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    PostApiProvider
   ]
 })
 export class AppModule {}

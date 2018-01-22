@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { NavController } from "ionic-angular";
-import { NotiApiProvider } from "../../providers/noti-api/noti-api";
 import { PostPage } from "../post/post";
+import { PostApiProvider } from "../../api/post.service";
 
 @Component({
   selector: "page-home",
@@ -10,16 +10,13 @@ import { PostPage } from "../post/post";
 export class HomePage {
   datalist = [];
 
-  constructor(private api: NotiApiProvider, public navCtrl: NavController) {}
+  constructor(private api: PostApiProvider, public navCtrl: NavController) {}
 
-  ngOnInit() {
+  ngOnInit() {}
 
-  }
-
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.getDataList();
   }
-
 
   actionLike(data) {
     const { like } = data;
@@ -27,29 +24,28 @@ export class HomePage {
     this.uppdateList(data);
   }
 
-  actionPost(){
+  actionPost() {
     this.navCtrl.push(PostPage);
   }
 
   getDataList() {
     this.api.getPosts().subscribe(res => {
-      this.datalist = this.sortList(res)
+      this.datalist = this.sortList(res);
     });
   }
 
   uppdateList(data) {
-    this.api.updatePost(data)
-      .subscribe(res => {
-        data = res
+    this.api.updatePost(data).subscribe(res => {
+      data = res;
     });
   }
 
-  sortList(data){
+  sortList(data) {
     return data.sort(function(a, b) {
-      if (a.createdAt < b.createdAt) {
+      if (a.id < b.id) {
         return 1;
       }
-      if (a.createdAt > b.createdAt) {
+      if (a.id > b.id) {
         return -1;
       }
       return 0;

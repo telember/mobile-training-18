@@ -5,7 +5,8 @@ import {
   LoadingController,
   ToastController
 } from "ionic-angular";
-import { NotiApiProvider } from "../../providers/noti-api/noti-api";
+import { PostApiProvider } from "../../api/post.service";
+
 
 /**
  * Generated class for the PostPage page.
@@ -25,7 +26,7 @@ export class PostPage {
   };
 
   constructor(
-    private api: NotiApiProvider,
+    private api: PostApiProvider,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private navCtrl: NavController,
@@ -36,7 +37,7 @@ export class PostPage {
 
   actionPost() {
     if (this.dataPost.name !== "" && this.dataPost.detail !== "") {
-      this.handlePost()
+      this.handlePost();
     } else {
       let toast = this.toastCtrl.create({
         message: "ข้อมูลไม่ครบ",
