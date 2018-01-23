@@ -32,8 +32,6 @@ export class PostPage {
     this.dataPost = { detail: "", name: "" };
   }
 
-  ionViewDidLoad() {}
-
   actionPost() {
     if (this.dataPost.name !== "" && this.dataPost.detail !== "") {
       this.handlePost();

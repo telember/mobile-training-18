@@ -1,4 +1,7 @@
 export interface PostModel {
-  detail:string;
-  name:string;
+  id?: number;
+  detail: string;
+  name: string;
+  like?: number;
+  createdAt?: number;
 }
