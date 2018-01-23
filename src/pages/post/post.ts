@@ -6,6 +6,7 @@ import {
   ToastController
 } from "ionic-angular";
 import { PostApiProvider } from "../../api/post.service";
+import { PostModel } from "../../model/post.model";
 
 
 /**
@@ -20,17 +21,16 @@ import { PostApiProvider } from "../../api/post.service";
   templateUrl: "post.html"
 })
 export class PostPage {
-  dataPost = {
-    detail: "",
-    name: ""
-  };
+  dataPost:PostModel
 
   constructor(
     private api: PostApiProvider,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private navCtrl: NavController
-  ) {}
+  ) {
+    this.dataPost = { detail: "", name: "" };
+  }
 
   ionViewDidLoad() {}
 

@@ -2,13 +2,14 @@ import { Component } from "@angular/core";
 import { NavController } from "ionic-angular";
 import { PostPage } from "../post/post";
 import { PostApiProvider } from "../../api/post.service";
+import { PostModel } from "../../model/post.model";
 
 @Component({
   selector: "page-home",
   templateUrl: "home.html"
 })
 export class HomePage {
-  datalist = [];
+  datalist: PostModel[] = [];
 
   constructor(private api: PostApiProvider, public navCtrl: NavController) {}
 
@@ -21,7 +22,7 @@ export class HomePage {
   actionLike(data) {
     const { like } = data;
     data.like = (like || 0) + 1;
-    this.uppdateList(data);
+    this.uppdatePost(data);
   }
 
   actionPost() {
@@ -34,11 +35,12 @@ export class HomePage {
     });
   }
 
-  uppdateList(data) {
+  uppdatePost(data) {
     this.api.updatePost(data).subscribe(res => {
       data = res;
     });
   }
+
 
   sortList(data) {
     return data.sort(function(a, b) {

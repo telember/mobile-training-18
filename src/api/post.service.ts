@@ -12,9 +12,7 @@ import { APP_CONFIG } from "../config/app.config";
 export class PostApiProvider {
   host = APP_CONFIG.HOST;
 
-  constructor(public http: HttpClient) {
-
-  }
+  constructor(public http: HttpClient) {}
 
   getPosts() {
     return this.http.get(`${this.host}/posts`);
@@ -30,5 +28,9 @@ export class PostApiProvider {
 
   updatePost(data) {
     return this.http.put(`${this.host}/posts/${data.id}`, data);
+  }
+
+  deletePost(id) {
+    return this.http.delete(`${this.host}/posts/${id}`);
   }
 }
